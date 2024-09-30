@@ -1,0 +1,45 @@
+//    Font Weight guide:
+//    ------------------
+//    100 - thin
+//    200
+//    300 - light
+//    400 - regular / normal
+//    500 - medium
+//    600 - semi-bold
+//    700 - bold
+//    800
+//    900 - black / heavy
+
+// Font Face mixin
+@mixin fontFace($fontName, $fileName, $fontWeight, $fontStyle) {
+  @font-face {
+    font-family: "#{$fontName}";
+    src: url("#{$fileName}.woff2") format("woff2"),
+        url("#{$fileName}.woff") format("woff"),
+        url("#{$fileName}.ttf") format("truetype");
+    font-weight: #{$fontWeight};
+    font-style: #{$fontStyle};
+    font-display: swap;
+  }
+}
+
+// Light
+@include fontFace("Open Sans", "opensans-light-webfont", "300", "normal");
+// Light Italic
+@include fontFace("Open Sans", "opensans-lightitalic-webfont", "300", "italic");
+// Normal
+@include fontFace("Open Sans", "opensans-regular-webfont", "400", "normal");
+// Italic
+@include fontFace("Open Sans", "opensans-italic-webfont", "400", "italic");
+// Semi Bold
+@include fontFace("Open Sans", "opensans-semibold-webfont", "600", "normal");
+// Semi Bold Italic
+@include fontFace("Open Sans", "opensans-semibolditalic-webfont", "600", "italic");
+// Bold
+@include fontFace("Open Sans", "opensans-bold-webfont", "700", "normal");
+// Bold Italic
+@include fontFace("Open Sans", "opensans-bolditalic-webfont", "700", "italic");
+// Extra Bold
+@include fontFace("Open Sans", "opensans-extrabold-webfont", "800", "normal");
+// Extra Bold Italic
+@include fontFace("Open Sans", "opensans-extrabolditalic-webfont", "800", "italic");
